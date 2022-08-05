@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lite_gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/white"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/main_title"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                tools:ignore="RelativeOverlap,SpUsage" />
+
+            <Button
+                android:id="@+id/btn_to_ledger"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/ic_ledger" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingHorizontal="@dimen/activity_main_padding">
+
+            <Button
+                android:id="@+id/btn_outcome"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_tag_selected"
+                android:text="@string/outcome"
+                android:textColor="@color/theme_color"
+                android:textSize="18dp"
+                tools:ignore="SpUsage" />
+
+            <Button
+                android:id="@+id/btn_income"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:text="@string/income"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                tools:ignore="SpUsage" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/activity_main_padding">
+
+            <TextView
+                android:id="@+id/tv_price_board"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_underline_outcome"
+                android:gravity="end"
+                android:text="0.00"
+                android:textColor="@color/red_outcome"
+                android:textSize="64dp"
+                tools:ignore="HardcodedText,SpUsage" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="15dp"
+                tools:ignore="SpUsage">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:contentDescription="@string/category"
+                    android:src="@drawable/ic_category" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/category"
+                    android:textColor="@color/deep_gray"
+                    android:textSize="18dp" />
+
+                <Spinner
+                    android:id="@+id/sp_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:spinnerMode="dialog" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="15dp"
+                tools:ignore="SpUsage">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:contentDescription="@string/remark"
+                    android:src="@drawable/ic_remark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/remark"
+                    android:textColor="@color/deep_gray"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/et_remark"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="text"
+                    android:textSize="22dp"
+                    tools:ignore="Autofill,LabelFor" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btn_keyboard_ctl"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="@color/white"
+            android:contentDescription="@string/hide_keyboard"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_button_keyboard_hide" />
+
+        <GridLayout
+            android:id="@+id/layout_keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="4">
+
+            <Button
+                android:id="@+id/btn_one"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/keyboard_height"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bg_keyboard_button"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/one"
+                android:textSize="@dimen/keyboard_font_size"
+                tools:ignore="SpUsage" />
+
+            <Button
+                android:id="@+id/btn_two"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/keyboard_height"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bg_keyboard_button"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/two"
+                android:textSize="@dimen/keyboard_font_size"
+                tools:ignore="SpUsage" />
+
+            <Button
+                android:id="@+id/btn_three"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/keyboard_height"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bg_keyboard_button"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/three"
+                android:textSize="@dimen/keyboard_font_size"
+                tools:ignore="SpUsage" />
+
+            <Button
+                android:id="@+id/btn_four"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/keyboard_height"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bg_keyboard_button"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/four"
+                android:textSize="@dimen/keyboard_font_size"
+                tools:ignore="SpUsage" />
+
+            <Button
+                android:id="@+id/btn_five"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/keyboard_height"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bg_keyboard_button"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/five"
+                android:textSize="@dimen/keyboard_font_size"
+                tools:ignore="SpUsage" />
+
+            <Button
+                android:id="@+id/btn_six"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/keyboard_height"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bg_keyboard_button"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/six"
+                android:textSize="@dimen/keyboard_font_size"
+                tools:ignore="SpUsage" />
+
+            <Button
+                android:id="@+id/btn_seven"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/keyboard_height"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bg_keyboard_button"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/seven"
+                android:textSize="@dimen/keyboard_font_size"
+                tools:ignore="SpUsage" />
+
+            <Button
+                android:id="@+id/btn_eight"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/keyboard_height"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bg_keyboard_button"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/eight"
+                android:textSize="@dimen/keyboard_font_size"
+                tools:ignore="SpUsage" />
+
+            <Button
+                android:id="@+id/btn_nine"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/keyboard_height"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bg_keyboard_button"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/nine"
+                android:textSize="@dimen/keyboard_font_size"
+                tools:ignore="SpUsage" />
+
+            <Button
+                android:id="@+id/btn_dot"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/keyboard_height"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bg_keyboard_button"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/dot"
+                android:textSize="@dimen/keyboard_font_size"
+                tools:ignore="SpUsage" />
+
+            <Button
+                android:id="@+id/btn_zero"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/keyboard_height"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bg_keyboard_button"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/zero"
+                android:textSize="@dimen/keyboard_font_size"
+                tools:ignore="SpUsage" />
+
+            <Button
+                android:id="@+id/btn_backspace"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/keyboard_height"
+                android:layout_columnWeight="1"
+                android:background="@drawable/bg_keyboard_button"
+                android:gravity="center"
+                android:stateListAnimator="@null"
+                android:text="@string/backspace"
+                android:textSize="@dimen/keyboard_font_size"
+                tools:ignore="SpUsage" />
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/btn_enter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/keyboard_height"
+            android:background="@drawable/bg_keyboard_button"
+            android:text="@string/enter"
+            android:textSize="@dimen/keyboard_font_size"
+            tools:ignore="SpUsage" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
